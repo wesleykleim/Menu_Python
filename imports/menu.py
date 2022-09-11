@@ -1,5 +1,6 @@
 def leiaInt(msg):
     while True:
+
         try:
             n  = int(input(msg))
         except(ValueError, TypeError):
