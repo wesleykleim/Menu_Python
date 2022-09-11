@@ -10,7 +10,12 @@ def leiaInt(msg):
             print('\033[31mEntrada de dados interronpidade pelo usuário\033[m')
             return 0
         else:
-            return n
+           return n
+
+
+
+
+
 
 
 def linha(tam = 42):
