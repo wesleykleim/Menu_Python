@@ -11,6 +11,7 @@ from time import sleep
 cabecalho( 'SITEMA CHALENGE PYTHON v1.0')
 cadastro = []
 cadastroEmpresa = []
+vagas = ['Empresa: IBM','Cargo: Estagiario','Salario: R$3000,00']
 while True:
     resposta = menu(['Cadastrar Empresa', 'Cadastrar Candiadato', 'Ver Candidato Cadastrado','Ver Vagas', 'Sair do Sistema'])
 
@@ -20,7 +21,7 @@ while True:
        print('Informe os dados da empresa: ')
        empresa = input('Digite o nome da empresa: ')
        ramo = input('Qual o ramo de atividade: ')
-       cnpj = input(leiaInt('Digite o número do CNPJ: '))
+       cnpj = input(('Digite o número do CNPJ: '))
 
        cadastroEmpresa.append(f'Nome empresa: {empresa}')
        cadastroEmpresa.append(f'Ramo de Atividade: {ramo}')
@@ -46,16 +47,24 @@ while True:
         cadastro.append(f'Data de Nascimento: {dtNasc}')
         cadastro.append(f'Genero: {genero}')
         cadastro.append(f'Apelido: {apelido}')
+        print("Cadastrado com seucesso!")
 
     elif resposta == 3:
         cabecalho('Ver Candidato Cadastrado')
-        for i in(range(len(cadastro))):
-           print(cadastro[i])
+        if len(cadastro) > 1:
+
+            for i in range(len(cadastro)):
+             print(cadastro[i])
+        else:
+            print('Nenhum cadidato encontrado') 
            
 
 
     elif resposta == 4:
         cabecalho('Ver Vagas')
+        for i in range(len(vagas)):
+             print(vagas[i])
+
     elif resposta == 5:
         print('\033[32mSaindo do sistema... Até logo!\033[m')
         break
